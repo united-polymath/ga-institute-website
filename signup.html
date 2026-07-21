@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>회원가입 | Global Agenda Institute</title>
+<meta name="description" content="GAI 회원가입 — 인문 교육·자료·행사 서비스 이용." />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html"><img class="logo-img" src="assets/logo.png" alt="Global Agenda Institute" /></a>
+    <div class="nav-right">
+      <nav class="menu">
+        <a href="about.html">기관소개</a>
+        <a href="events.html">학술·행사</a>
+        <a href="news.html">공지·소식</a>
+        <a href="programs.html">프로그램</a>
+        <a href="#contact">문의</a>
+      </nav>
+      <button class="icon-btn login-desktop" data-open-login aria-label="로그인" title="로그인">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.2 4-6.5 8-6.5s8 2.3 8 6.5"/></svg>
+      </button>
+      <button class="icon-btn burger" id="burger" aria-label="메뉴 열기" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="top">
+<div class="page-hero"><div class="wrap">
+      <span class="eyebrow">회원가입</span>
+      <h1>GAI와 함께<br>성장할 준비가 되셨나요?</h1>
+      <p class="lead">가입 후 프로그램 신청, 발간 자료 열람, 학술·행사 참가 등 GAI의 모든 서비스를 이용할 수 있습니다.</p>
+    </div></div>
+    <div class="section"><div class="wrap">
+      <form class="form-card" onsubmit="return false">
+        <div class="fgroup">
+          <div class="agree">
+            <label class="all"><input type="checkbox" /> 약관에 모두 동의합니다</label>
+            <label class="checkline"><input type="checkbox" /> <a>이용약관</a> 동의 <span class="opt">(필수)</span></label>
+            <label class="checkline"><input type="checkbox" /> <a>개인정보 수집·이용</a> 동의 <span class="opt">(필수)</span></label>
+            <label class="checkline"><input type="checkbox" /> 마케팅·뉴스레터 수신 동의 <span class="opt">(선택)</span></label>
+          </div>
+        </div>
+        <div class="fgroup"><label>이름 <span class="req">*</span></label><input class="field" type="text" placeholder="이름을 입력하세요" /></div>
+        <div class="fgroup"><label>이메일 (아이디) <span class="req">*</span></label><input class="field" type="email" placeholder="example@email.com" /><p class="hint">입력하신 이메일이 로그인 아이디로 사용됩니다.</p></div>
+        <div class="fgroup"><label>비밀번호 <span class="req">*</span></label><div class="frow"><input class="field" type="password" placeholder="비밀번호" /><input class="field" type="password" placeholder="비밀번호 확인" /></div><p class="hint">영문·숫자·특수문자를 조합해 8자 이상 입력하세요.</p></div>
+        <div class="fgroup"><label>휴대폰</label><input class="field" type="tel" placeholder="010-0000-0000" /></div>
+        <div class="fgroup"><label>관심 분야 <span class="req">*</span></label>
+          <div class="interests">
+            <label class="icheck"><input type="checkbox" /><span>인문학</span></label>
+            <label class="icheck"><input type="checkbox" /><span>철학</span></label>
+            <label class="icheck"><input type="checkbox" /><span>종교</span></label>
+            <label class="icheck"><input type="checkbox" /><span>심리</span></label>
+          </div>
+        </div>
+        <button class="signin" type="submit">가입하기</button>
+        <p class="form-alt">이미 회원이신가요? <a data-open-login>로그인</a></p>
+      </form>
+    </div></div>
+</main>
+<footer id="contact">
+  <div class="wrap foot">
+    <div>
+      <a href="index.html"><img class="logo-img foot-logo" src="assets/logo.png" alt="Global Agenda Institute" /></a>
+      <p class="foot-info">(00000) 서울특별시 ○○구 ○○로 000, 0층 &nbsp;|&nbsp; 대표전화 02-000-0000 &nbsp;|&nbsp; office@gai.org<br>© 2026 Global Agenda Institute. All rights reserved.</p>
+    </div>
+    <nav>
+      <a href="about.html">기관소개</a><a href="events.html">학술·행사</a>
+      <a href="news.html">공지·소식</a><a href="programs.html">프로그램</a>
+      <a href="#contact">문의</a><a>개인정보처리방침</a>
+    </nav>
+  </div>
+</footer>
+<!-- ===== LOGIN MODAL ===== -->
+<div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-label="로그인">
+  <div class="modal-card">
+    <button class="modal-x" data-close aria-label="닫기">✕</button>
+    <img class="logo-img" src="assets/logo.png" alt="Global Agenda Institute" />
+    <h2>멤버 로그인</h2>
+    <p class="msub">GAI 회원 서비스를 이용하시려면 로그인해 주세요.</p>
+    <form>
+      <input class="field" type="text" placeholder="아이디" aria-label="아이디" />
+      <input class="field" type="password" placeholder="비밀번호" aria-label="비밀번호" />
+      <label class="remember"><input type="checkbox" /> 로그인 상태 유지</label>
+      <button class="signin" type="submit">로그인</button>
+    </form>
+    <div class="modal-links"><a>아이디 찾기</a><a>비밀번호 찾기</a><a href="signup.html">회원가입</a></div>
+  </div>
+</div>
+
+
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="drawer" id="drawer">
+  <div class="drawer-panel">
+    <div class="drawer-top">
+      <img class="logo-img" src="assets/logo.png" alt="Global Agenda Institute" style="height:38px" />
+      <button class="icon-btn" id="drawerClose" aria-label="닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="dlinks">
+      <a href="about.html">기관소개</a>
+      <a href="events.html">학술·행사</a>
+      <a href="news.html">공지·소식</a>
+      <a href="programs.html">프로그램</a>
+      <a href="#contact">문의</a>
+    </div>
+    <button class="btn btn-primary drawer-login" style="width:100%" data-open-login>로그인</button>
+  </div>
+</div>
+
+
+<script src="assets/main.js"></script>
+</body>
+</html>

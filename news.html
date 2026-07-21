@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>공지·소식 | Global Agenda Institute</title>
+<meta name="description" content="GAI 공지사항·뉴스레터 소식." />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html"><img class="logo-img" src="assets/logo.png" alt="Global Agenda Institute" /></a>
+    <div class="nav-right">
+      <nav class="menu">
+        <a href="about.html">기관소개</a>
+        <a href="events.html">학술·행사</a>
+        <a href="news.html">공지·소식</a>
+        <a href="programs.html">프로그램</a>
+        <a href="#contact">문의</a>
+      </nav>
+      <button class="icon-btn login-desktop" data-open-login aria-label="로그인" title="로그인">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.2 4-6.5 8-6.5s8 2.3 8 6.5"/></svg>
+      </button>
+      <button class="icon-btn burger" id="burger" aria-label="메뉴 열기" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="top">
+<div class="page-hero"><div class="wrap">
+      <span class="eyebrow">공지·소식</span>
+      <h1>GAI의 소식을 전합니다</h1>
+      <p class="lead">프로그램 모집, 학술 소식, 뉴스레터까지 기관의 공지사항을 확인하세요.</p>
+    </div></div>
+    <div class="section"><div class="wrap">
+      <div class="filters"><span class="chip on">공지사항</span><span class="chip">뉴스레터</span><span class="chip">보도자료</span></div>
+      <div class="board-wrap"><table class="board">
+        <thead><tr><th style="width:60px">번호</th><th>제목</th><th>작성일</th><th>조회</th></tr></thead>
+        <tbody>
+          <tr><td class="num">28</td><td class="tit"><a href="news-detail.html"><span class="tag">모집</span>2026 GAI 인문학 아카데미 3기 모집 안내</a></td><td class="date">2026.06.18</td><td class="views">1,240</td></tr>
+          <tr><td class="num">27</td><td class="tit"><a href="news-detail.html">「철학으로 읽는 시대」 청년 강독 프로그램 개설</a></td><td class="date">2026.05.30</td><td class="views">986</td></tr>
+          <tr><td class="num">26</td><td class="tit"><a href="news-detail.html">종교·문화 국제 콜로키움 개최 안내</a></td><td class="date">2026.03.24</td><td class="views">742</td></tr>
+          <tr><td class="num">25</td><td class="tit"><a href="news-detail.html">청년 심리·회복탄력성 워크숍 참가자 모집</a></td><td class="date">2026.02.11</td><td class="views">1,033</td></tr>
+          <tr><td class="num">24</td><td class="tit"><a href="news-detail.html"><span class="tag">공지</span>2025년도 연간 활동보고 및 결산 공고</a></td><td class="date">2026.01.09</td><td class="views">521</td></tr>
+          <tr><td class="num">23</td><td class="tit"><a href="news-detail.html">겨울 인문 집중과정 수강생 모집 안내</a></td><td class="date">2025.12.15</td><td class="views">874</td></tr>
+          <tr><td class="num">22</td><td class="tit"><a href="news-detail.html">GAI-해외 파트너 대학 교류 협약 체결</a></td><td class="date">2025.11.28</td><td class="views">669</td></tr>
+          <tr><td class="num">21</td><td class="tit"><a href="news-detail.html">2025 가을 인문학 시민강좌 후기 안내</a></td><td class="date">2025.10.20</td><td class="views">738</td></tr>
+        </tbody>
+      </table></div>
+      <div class="pager"><a>‹</a><a class="on">1</a><a>2</a><a>3</a><a>4</a><a>›</a></div>
+    </div></div>
+</main>
+<footer id="contact">
+  <div class="wrap foot">
+    <div>
+      <a href="index.html"><img class="logo-img foot-logo" src="assets/logo.png" alt="Global Agenda Institute" /></a>
+      <p class="foot-info">(00000) 서울특별시 ○○구 ○○로 000, 0층 &nbsp;|&nbsp; 대표전화 02-000-0000 &nbsp;|&nbsp; office@gai.org<br>© 2026 Global Agenda Institute. All rights reserved.</p>
+    </div>
+    <nav>
+      <a href="about.html">기관소개</a><a href="events.html">학술·행사</a>
+      <a href="news.html">공지·소식</a><a href="programs.html">프로그램</a>
+      <a href="#contact">문의</a><a>개인정보처리방침</a>
+    </nav>
+  </div>
+</footer>
+<!-- ===== LOGIN MODAL ===== -->
+<div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-label="로그인">
+  <div class="modal-card">
+    <button class="modal-x" data-close aria-label="닫기">✕</button>
+    <img class="logo-img" src="assets/logo.png" alt="Global Agenda Institute" />
+    <h2>멤버 로그인</h2>
+    <p class="msub">GAI 회원 서비스를 이용하시려면 로그인해 주세요.</p>
+    <form>
+      <input class="field" type="text" placeholder="아이디" aria-label="아이디" />
+      <input class="field" type="password" placeholder="비밀번호" aria-label="비밀번호" />
+      <label class="remember"><input type="checkbox" /> 로그인 상태 유지</label>
+      <button class="signin" type="submit">로그인</button>
+    </form>
+    <div class="modal-links"><a>아이디 찾기</a><a>비밀번호 찾기</a><a href="signup.html">회원가입</a></div>
+  </div>
+</div>
+
+
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="drawer" id="drawer">
+  <div class="drawer-panel">
+    <div class="drawer-top">
+      <img class="logo-img" src="assets/logo.png" alt="Global Agenda Institute" style="height:38px" />
+      <button class="icon-btn" id="drawerClose" aria-label="닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="dlinks">
+      <a href="about.html">기관소개</a>
+      <a href="events.html">학술·행사</a>
+      <a href="news.html">공지·소식</a>
+      <a href="programs.html">프로그램</a>
+      <a href="#contact">문의</a>
+    </div>
+    <button class="btn btn-primary drawer-login" style="width:100%" data-open-login>로그인</button>
+  </div>
+</div>
+
+
+<script src="assets/main.js"></script>
+</body>
+</html>
