@@ -41,11 +41,12 @@
           </ul>
           <div class="map"><span class="pin">📍 GA Institute</span></div>
         </div>
-        <form class="box" onsubmit="return false" style="padding:28px">
+        <form class="box" id="contactForm" style="padding:28px">
           <div class="fgroup"><label>이름 <span class="req">*</span></label><input class="field" type="text" placeholder="이름" /></div>
           <div class="fgroup"><label>이메일 <span class="req">*</span></label><input class="field" type="email" placeholder="example@email.com" /></div>
           <div class="fgroup"><label>제목</label><input class="field" type="text" placeholder="문의 제목" /></div>
           <div class="fgroup"><label>내용 <span class="req">*</span></label><textarea class="field" rows="5" placeholder="문의 내용을 입력하세요" style="resize:vertical"></textarea></div>
+          <p class="form-note" id="contactNote" hidden></p>
           <button class="signin" type="submit">문의 보내기</button>
         </form>
       </div>
@@ -75,11 +76,12 @@
     <img class="logo-img" src="assets/logo.png" alt="Global Agenda Institute" />
     <h2>멤버 로그인</h2>
     <p class="msub">GA Institute 회원 서비스를 이용하시려면 로그인해 주세요.</p>
-    <form>
+    <form id="loginForm">
       <input class="field" type="text" placeholder="아이디" aria-label="아이디" />
       <input class="field" type="password" placeholder="비밀번호" aria-label="비밀번호" />
       <label class="remember"><input type="checkbox" /> 로그인 상태 유지</label>
       <button class="signin" type="submit">로그인</button>
+      <p class="form-note" id="loginNote" hidden></p>
     </form>
     <div class="modal-links"><a href="contact.html">아이디 찾기</a><a href="contact.html">비밀번호 찾기</a><a href="signup.html">회원가입</a></div>
   </div>

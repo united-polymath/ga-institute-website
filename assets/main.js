@@ -50,22 +50,33 @@
   [].forEach.call(document.querySelectorAll('nav.menu a[href$=".html"]'),function(a){ if(a.getAttribute('href')===file) a.classList.add('active'); });
 })();
 
-/* 추천 도서 표지 자동 로딩 (Open Library · 키 불필요 · 한도 없음 · 실패 시 디자인 표지 유지) */
+/* 추천 도서 표지 자동 로딩 (Open Library · 여러 판 중 표지 자동 선택 · 중복 제거) */
 (function(){
   var books=[].slice.call(document.querySelectorAll('.book'));
+  var groups={};
   books.forEach(function(b){
-    var el=b.querySelector('.bcover-img'); if(!el) return;
-    var isbn=(b.getAttribute('data-isbn')||'').trim();
-    var q=(b.getAttribute('data-q')||'').trim();
-    function setImg(src){ el.onload=function(){ el.classList.add('loaded'); }; el.src=src; }
-    if(isbn){ setImg('https://covers.openlibrary.org/b/isbn/'+encodeURIComponent(isbn)+'-M.jpg?default=false'); return; }
-    if(!q) return;
-    fetch('https://openlibrary.org/search.json?limit=1&fields=cover_i,isbn&q='+encodeURIComponent(q))
-      .then(function(r){ return r.ok ? r.json() : null; })
-      .then(function(d){
-        var doc = d && d.docs && d.docs[0]; if(!doc) return;
-        if(doc.cover_i){ setImg('https://covers.openlibrary.org/b/id/'+doc.cover_i+'-M.jpg'); }
-        else if(doc.isbn && doc.isbn[0]){ setImg('https://covers.openlibrary.org/b/isbn/'+doc.isbn[0]+'-M.jpg?default=false'); }
-      }).catch(function(){});
+    var key=(b.getAttribute('data-isbn')||'')+'@@'+(b.getAttribute('data-q')||'');
+    (groups[key]=groups[key]||[]).push(b);
+  });
+  Object.keys(groups).forEach(function(key){
+    var arr=groups[key], b0=arr[0];
+    var isbn=(b0.getAttribute('data-isbn')||'').trim();
+    var q=(b0.getAttribute('data-q')||'').trim();
+    function apply(src){ arr.forEach(function(b){ var img=b.querySelector('.bcover-img'); if(!img) return; img.onerror=null; img.onload=function(){img.classList.add('loaded');}; img.src=src; }); }
+    function searchCover(){
+      if(!q) return;
+      fetch('https://openlibrary.org/search.json?limit=20&fields=cover_i&q='+encodeURIComponent(q))
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(d){
+          var docs=(d&&d.docs)||[];
+          for(var i=0;i<docs.length;i++){ if(docs[i].cover_i){ apply('https://covers.openlibrary.org/b/id/'+docs[i].cover_i+'-M.jpg'); return; } }
+        }).catch(function(){});
+    }
+    if(isbn){
+      var first=arr[0].querySelector('.bcover-img');
+      if(first){ first.onerror=function(){ first.onerror=null; searchCover(); };
+        first.onload=function(){ apply('https://covers.openlibrary.org/b/isbn/'+encodeURIComponent(isbn)+'-M.jpg'); };
+        first.src='https://covers.openlibrary.org/b/isbn/'+encodeURIComponent(isbn)+'-M.jpg?default=false'; }
+    } else { searchCover(); }
   });
 })();
